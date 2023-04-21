@@ -5,3 +5,4 @@ from api.serializers.path_serializer import PathSerializer
 class PathViewSet(ModelViewSet):
     queryset = Path.objects.all()
     serializer_class = PathSerializer
+    

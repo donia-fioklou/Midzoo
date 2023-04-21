@@ -24,3 +24,4 @@ class Registration(ModelViewSet):
         user.is_active = True
         user.save()
         return user
+

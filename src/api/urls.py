@@ -6,6 +6,7 @@ from api.views.customize_user_view import Registration
 from api.views.message_view import MessageViewSet
 from api.views.path_view import PathViewSet
 from api.views.reservation_view import ReservationViewSet
+
 app_name = 'api'
 router=routers.SimpleRouter()
 router.register('register',Registration,basename='register')
@@ -14,8 +15,8 @@ router.register('message',MessageViewSet,basename='message')
 router.register('path',PathViewSet,basename='path')
 router.register('reservation',ReservationViewSet,basename='reservation')
 
+
 urlpatterns = [
     path('api/',include(router.urls)),
 
-    
 ]

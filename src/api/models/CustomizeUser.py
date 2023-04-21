@@ -16,6 +16,7 @@ class CustomizeUser(AbstractUser):
     user_type=models.CharField(max_length=30, choices=user_type_choice, verbose_name='Type d\'utilisateur')
     id_card=models.ImageField(upload_to='images/', verbose_name='Carte d\'identité')
     
+    
     IMAGE_MAX_SIZE = (800, 800)
 
     def resize_images(self):
@@ -25,6 +26,8 @@ class CustomizeUser(AbstractUser):
         image = Image.open(self.id_card)
         image.thumbnail(self.IMAGE_MAX_SIZE)
         image.save(self.id_card.path)
+    
+    
         
         
     def __str__(self):
