@@ -12,10 +12,13 @@ class CustomizeUser(AbstractUser):
     phone=models.CharField(max_length=30, verbose_name='Téléphone')
     birth_date=models.DateField(null=True, verbose_name='Date de naissance')
     photo_profile=models.ImageField(upload_to='images/', verbose_name='Image')
-    school_name=models.CharField(max_length=30, verbose_name='Nom de l\'école')
+    school=models.ForeignKey('School', on_delete=models.CASCADE, verbose_name='Ecole', blank=True, null=True)
+    #school_name=models.CharField(max_length=30, verbose_name='Nom de l\'école')
     user_type=models.CharField(max_length=30, choices=user_type_choice, verbose_name='Type d\'utilisateur')
-    id_card=models.ImageField(upload_to='images/', verbose_name='Carte d\'identité')
-    
+    id_card=models.ImageField(upload_to='images/', verbose_name='Carte d\'identité', blank=True, null=True)
+    validation_step1=models.BooleanField(default=False, verbose_name='Validation étape 1')
+    validation_step2=models.BooleanField(default=False, verbose_name='Validation étape 2')
+    validation_step3=models.BooleanField(default=False, verbose_name='Validation étape 3')
     
     IMAGE_MAX_SIZE = (800, 800)
 

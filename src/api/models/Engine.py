@@ -7,9 +7,9 @@ class Engine(models.Model):
     engine_type_choice = (('VOITURE','Voiture'),('MOTO','Moto'))
     engine_type=models.CharField(max_length=30, choices=engine_type_choice, verbose_name='Type de moteur')
     mark=models.CharField(max_length=30, verbose_name='Marque')
-    model=models.CharField(max_length=30, verbose_name='Modèle')
+    model=models.CharField(max_length=30, verbose_name='Modèle', blank=True, null=True)
     Immatriculation=models.CharField(max_length=30, verbose_name='Immatriculation')
-    image=models.ImageField(upload_to='images/', verbose_name='Image')
+    image=models.ImageField(upload_to='images/', verbose_name='Image', blank=True, null=True)
     
     IMAGE_MAX_SIZE = (800, 800)
 
