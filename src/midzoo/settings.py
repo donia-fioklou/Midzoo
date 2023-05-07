@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'rest_framework.authtoken',
+    'django_filters',
 ]
 REST_FRAMEWORK = {
     
@@ -102,6 +103,21 @@ DATABASES = {
         
     }
 }
+"""
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'FDonia$midzoo',
+        'USER': 'FDonia',
+        'PASSWORD': '!AWU8ayByWfXruz',
+        'HOST' : 'FDonia.mysql.pythonanywhere-services.com',
+        'PORT' : '3306'
+
+
+    }
+}
+
+"""
 
 
 # Password validation

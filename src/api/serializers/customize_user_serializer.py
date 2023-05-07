@@ -1,5 +1,6 @@
 from django.conf import settings
 from rest_framework import serializers
+from django_filters import rest_framework as filters
 
 from api.models import CustomizeUser
 MIN_LENGTH = 8
@@ -44,3 +45,7 @@ class ChangePasswordSerializer(serializers.ModelSerializer):
         old_password = serializers.CharField(required=True)
         new_password = serializers.CharField(required=True)
 """
+class GetUserByEmailFilter(filters.FilterSet):
+    class Meta:
+        model = CustomizeUser
+        fields = ['email']
