@@ -93,16 +93,24 @@ WSGI_APPLICATION = 'midzoo.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+
+"""DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'midzoo',
         'USER': 'postgres',
-        'PASSWORD': 'Martin47.',
+        'PASSWORD': '12345678',
         'HOST' : 'localhost',
-        'PORT' : '5433'
+        'PORT' : '5432'
         
         
     }
-}
+}"""
 """
     DATABASES = {
     'default': {
